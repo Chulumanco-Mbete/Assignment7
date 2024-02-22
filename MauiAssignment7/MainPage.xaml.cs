@@ -31,9 +31,13 @@ namespace MauiAssignment7
         {
             string filePath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
             string fullFileName = Path.Combine(filePath, "myFile.txt");
-            string fileContent = File.ReadAllText(fullFileName);
-            User savedUser = JsonConvert.DeserializeObject<User>(fileContent);
-            return savedUser;
+            if (File.Exists(fullFileName))
+            {
+                string fileContent = File.ReadAllText(fullFileName);
+                User savedUser = JsonConvert.DeserializeObject<User>(fileContent);
+                return savedUser;
+            }
+            else return new User();
         }
 
         private void Button_Clicked(object sender, EventArgs e)
