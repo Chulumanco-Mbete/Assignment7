@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAssignment7.MainPage"
+             BackgroundColor="#f9f9f9">
+
+    <VerticalStackLayout>
+        <!--Profile Image-->
+        <Image Source="profile.png" Aspect="AspectFill" HeightRequest="200" WidthRequest="200" />
+
+        <!--Name Input-->
+        <Entry Placeholder="Enter your name..." PlaceholderColor="Black" Text="{Binding CurrentUser.Name}"/>
+
+        <!--Surname Input-->
+        <Entry Placeholder="Enter your surname..." PlaceholderColor="Black" Text="{Binding CurrentUser.Surname}"/>
+
+        <!--Email Address Input-->
+        <Entry Placeholder="Enter your email address..." PlaceholderColor="Black" Text="{Binding CurrentUser.Email}"/>
+
+        <!--Bio Input-->
+        <Entry Placeholder="Enter your bio..." PlaceholderColor="Black" Text="{Binding CurrentUser.Bio}"/>
+
+        <!--Save Button-->
+        <Button Text="Save" BackgroundColor="Black" Clicked="Button_Clicked"/>
+    </VerticalStackLayout>
+</ContentPage>
